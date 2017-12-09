@@ -196,6 +196,7 @@ int main(){
 					for (size_t i = 0; i < Cuarteles.size(); i++) {
 						cout<<i<<")"<<Cuarteles.at(i)<<endl;
 					}
+					
 				}
 			}break;
 			case 3:{}break;
