@@ -119,19 +119,85 @@ int main(){
 							case 2:{
 								cout<<"--Paratroopa--"<<endl;
 								cout<<"Ingrese el nombre"<<endl;
-								
+								string Nombre;
+								cin>>Nombre;
+								cout<<"Ingrese el HP"<<endl;
+								int HP;
+								cin>>HP;
+								cout<<"Ingrese la habilidad"<<endl;
+								string habilidad;
+								cin>>habilidad;
+								cout<<"Ingrese el color del Magikoopa"<<endl;
+								string Color;
+								cin>>Color;
+								Minion* soldado = new Paratroopa(Nombre,0,0,HP,9,0420,0.10,"P",habilidad,Color);
+								Cuarteles.push_back(soldado);
 							}break;
 							default:{}break;
 						}
 					}break;
-					case 3:{}break;
+					case 3:{
+						int opcionR;
+						cout<<endl;
+						cout<<"Range"<<endl;
+						cout<<"1)HammerBro"<<endl
+						<<"2)Magikoopa"<<endl
+						<<"Ingrese su opcion"<<endl;
+						cin>>opcionR;
+						switch (opcionR) {
+							case 1:{
+								cout<<"--HammerBro--"<<endl;
+								cout<<"Ingrese el nombre"<<endl;
+								string Nombre;
+								cin>>Nombre;
+								cout<<"Ingrese el HP"<<endl;
+								int HP;
+								cin>>HP;
+								cout<<"Ingrese el rango(en metros)"<<endl;
+								int rango;
+								cin>>rango;
+								cout<<"Ingrese el Tamaño del martillo en cm"<<endl;
+								int Tamano;
+								cin>>Tamano;
+								Minion* soldado = new HammerBro(Nombre,0,0,HP,6,0.15,0.30,"H",rango,Tamano);
+								Cuarteles.push_back(soldado);
+							}break;
+							case 2:{
+								cout<<"--Magikoopa--"<<endl;
+								cout<<"Ingrese el nombre"<<endl;
+								string Nombre;
+								cin>>Nombre;
+								cout<<"Ingrese el HP"<<endl;
+								int HP;
+								cin>>HP;
+								cout<<"Ingrese el rango(en metros)"<<endl;
+								int rango;
+								cin>>rango;
+								cout<<"Ingrese el color del Magikoopa"<<endl;
+								string Color;
+								cin>>Color;
+								Minion* soldado = new Magikoopa(Nombre,0,0,HP,6,0.15,0.30,"H",rango,Color);
+								Cuarteles.push_back(soldado);
+							}break;
+							default:{}break;
+						}
+					}break;
 					default:{
 						cout<<"No es una opcion valida."<<endl;
 					}break;
 				}
 
 			}break;
-			case 2:{}break;
+			case 2:{
+				if(Cuarteles.size() == 0){
+					cout<<"No hay ningun tipo de solado"<<endl;
+				}else{
+					cout<<"Lista de soldados en el cuartel"<<endl;
+					for (size_t i = 0; i < Cuarteles.size(); i++) {
+						cout<<i<<")"<<Cuarteles.at(i)<<endl;
+					}
+				}
+			}break;
 			case 3:{}break;
 			default:{}break;
 		}
