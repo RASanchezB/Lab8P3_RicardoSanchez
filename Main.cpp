@@ -91,10 +91,38 @@ int main(){
 
 					}break;
 					case 2:{
+						int opcionF;
 						cout<<endl;
 						cout<<"Flying"<<endl;
 						cout<<"1)Boo"<<endl
-						<<"2)Paratroopa"<<endl;
+						<<"2)Paratroopa"<<endl
+						<<"Ingrese su opcion"<<endl;
+						cin>>opcionF;
+						switch (opcionF) {
+							case 1:{
+								cout<<"--Boo--"<<endl
+								<<"Ingrese el nombre de su soldado"<<endl;
+								string Nombre;
+								cin>>Nombre;
+								cout<<"Ingrese el HP"<<endl;
+								int HP;
+								cin>>HP;
+								cout<<"Ingrese la habilidad"<<endl;
+								string habilidad;
+								cin>>habilidad;
+								cout<<"Ingrese el color del boo"<<endl;
+								string Color;
+								cin>>Color;
+								Minion* soldado = new Boo(Nombre,0,0,HP,8,0.20,0.35,"B",habilidad,Color);
+								Cuarteles.push_back(soldado);
+							}break;
+							case 2:{
+								cout<<"--Paratroopa--"<<endl;
+								cout<<"Ingrese el nombre"<<endl;
+								
+							}break;
+							default:{}break;
+						}
 					}break;
 					case 3:{}break;
 					default:{
